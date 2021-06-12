@@ -1,17 +1,17 @@
-const LOWER = 'abcdefghijklmnopqrstuvwxyz';
-const UPPER = LOWER.toUpperCase();
-const COMPLETE_LOWER = LOWER + LOWER;
-const COMPLETE_UPPER = UPPER + UPPER;
+const LOWER_ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
+const UPPER_ALPHABET = LOWER_ALPHABET.toUpperCase();
+const COMPLETE_LOWER_ALPHABET = LOWER_ALPHABET + LOWER_ALPHABET;
+const COMPLETE_UPPER_ALPHABET = UPPER_ALPHABET + UPPER_ALPHABET;
 const ROTATION = 13;
 
 function rot13(string) {
   let rotatedString = '';
 
   for (let index = 0; index < string.length; index += 1) {
-    if (COMPLETE_LOWER.includes(string[index])) {
-      rotatedString += (COMPLETE_LOWER[COMPLETE_LOWER.indexOf(string[index]) + ROTATION]);
-    } else if (COMPLETE_UPPER.includes(string[index])) {
-      rotatedString += (COMPLETE_UPPER[COMPLETE_UPPER.indexOf(string[index]) + ROTATION]);
+    if (COMPLETE_LOWER_ALPHABET.includes(string[index])) {
+      rotatedString += (COMPLETE_LOWER_ALPHABET[COMPLETE_LOWER_ALPHABET.indexOf(string[index]) + ROTATION]);
+    } else if (COMPLETE_UPPER_ALPHABET.includes(string[index])) {
+      rotatedString += (COMPLETE_UPPER_ALPHABET[COMPLETE_UPPER_ALPHABET.indexOf(string[index]) + ROTATION]);
     } else {
       rotatedString += string[index];
     }
